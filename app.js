@@ -4,6 +4,7 @@ const sectBtn = document.querySelectorAll('.control')
 const allSections = document.querySelector('.main-content')
 
 
+
 function pageTransition () {
     // Button click active class
     for(let i = 0; i < sectBtn.length; i++) {
