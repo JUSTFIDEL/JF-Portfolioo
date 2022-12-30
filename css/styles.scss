@@ -1143,20 +1143,7 @@ section {
 
 @media screen and (max-width: 700px) {
     .section {
-        padding: 7rem 3rem !important;
-    }
-
-    .about-stats {
-        .progress-bars {
-            grid-template-columns: 1fr;
-        }
-    }
-
-}
-
-@media screen and (max-width: 700px) {
-    .section {
-        padding: 4rem 2rem !important;
+        padding: 7rem 4rem !important;
     }
 
     .about-stats {
