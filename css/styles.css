@@ -971,7 +971,7 @@ section {
 	}
 } /*# sourceMappingURL=styles.css.map */
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
 	.section {
 		padding: 2.5rem 1.2rem !important;
 		margin: 0 auto;
