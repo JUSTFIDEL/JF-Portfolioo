@@ -228,6 +228,7 @@ section {
 		opacity: 0;
 	}
 	50% {
+		transform: translateY(-200px);
 		opacity: 0;
 	}
 	100% {
@@ -996,7 +997,7 @@ section {
 
 	@keyframes loader {
 		0% {
-			transform: translateX(-200px);
+			transform: translateX(-300px);
 			opacity: 0;
 		}
 		100% {
