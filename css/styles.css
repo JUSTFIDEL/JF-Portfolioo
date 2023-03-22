@@ -570,6 +570,7 @@ section {
 .contact-content-con {
 	display: flex;
 	padding-top: 3rem;
+	font-size: 1rem;
 }
 .contact-content-con .left-contact {
 	flex: 2;
@@ -582,7 +583,7 @@ section {
 }
 .contact-content-con .left-contact p {
 	margin: 1rem 0;
-	line-height: 2rem;
+	line-height: 1.5rem;
 	animation: loader 1.2s ease-in;
 }
 .contact-content-con .left-contact .contact-info .contact-item {
@@ -813,9 +814,22 @@ section {
 		margin-left: 0;
 		margin-top: 1.5rem;
 	}
-	.section {
-		padding: 1.5rem 1.8rem !important;
+
+	.contact-content-con .right-contact .input-control {
+		width: 100%;
+		margin-left: 0;
 	}
+
+	.contact-content-con .right-contact .submit-btn {
+		padding: 0.8rem 0;
+	}
+
+	.contact-content-con .right-contact .input-control input,
+	.contact-content-con .right-contact .input-control textarea {
+		border-radius: 10px;
+		width: 100%;
+	}
+
 	.main-title h2 {
 		font-size: 2rem !important;
 	}
@@ -1024,5 +1038,9 @@ section {
 	.contact-content-con .left-contact .contact-info .contact-item {
 		opacity: 1;
 		animation: loader1 1.3s ease-in;
+	}
+
+	.contact-content-con .right-contact {
+		margin: 0;
 	}
 }
