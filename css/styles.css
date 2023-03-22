@@ -220,7 +220,7 @@ section {
 	justify-content: center;
 	padding-right: 12rem;
 	opacity: 1;
-	animation: loader 3s ease-in-out;
+	animation: loader 1.2s ease-in-out;
 }
 
 @keyframes loader {
@@ -305,10 +305,12 @@ section {
 	line-height: 2rem;
 	padding: 0.5rem;
 	color: var(--color-grey1);
+	animation: loader 1.2s ease-in;
 }
 .about-container .left-about h4 {
 	font-size: 1.5rem;
 	text-transform: uppercase;
+	animation: loader 1.2s ease-in;
 }
 
 .about-stats {
@@ -350,22 +352,22 @@ section {
 	transition: all 0.4s ease-in-out;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .html {
-	width: 80%;
+	width: 90%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .css {
-	width: 70%;
+	width: 80%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .js {
-	width: 65%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .react {
-	width: 45%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .bootstrap {
 	width: 70%;
 }
+.about-stats .progress-bars .progress-bar .progress-con .progress .react {
+	width: 75%;
+}
+.about-stats .progress-bars .progress-bar .progress-con .progress .bootstrap {
+	width: 80%;
+}
 .about-stats .progress-bars .progress-bar .progress-con .progress .jq {
-	width: 65%;
+	width: 75%;
 }
 
 .stat-title {
@@ -576,16 +578,19 @@ section {
 	margin-top: 1rem;
 	font-size: 2rem;
 	text-transform: uppercase;
+	animation: loader 1.3s ease-in;
 }
 .contact-content-con .left-contact p {
 	margin: 1rem 0;
 	line-height: 2rem;
+	animation: loader 1.2s ease-in;
 }
 .contact-content-con .left-contact .contact-info .contact-item {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 0.6rem;
+	animation: loader 1.2s ease-in;
 }
 .contact-content-con .left-contact .contact-info .contact-item p {
 	margin: 0.3rem !important;
@@ -973,7 +978,7 @@ section {
 
 @media screen and (max-width: 600px) {
 	.section {
-		padding: 2.5rem 1.2rem !important;
+		padding: 2.5rem 1.8rem !important;
 		margin: 0 auto;
 	}
 
@@ -992,10 +997,10 @@ section {
 
 	.header-content .right-header p {
 		opacity: 1;
-		animation: loader 2s ease-in;
+		animation: loader1 1.3s ease-in;
 	}
 
-	@keyframes loader {
+	@keyframes loader1 {
 		0% {
 			transform: translateX(-300px);
 			opacity: 0;
@@ -1004,5 +1009,20 @@ section {
 			transform: translateX(0px);
 			opacity: 1;
 		}
+	}
+
+	.about-container .left-about p {
+		opacity: 1;
+		animation: loader1 1.3s ease-in;
+	}
+
+	.contact-content-con .left-contact p {
+		opacity: 1;
+		animation: loader1 1.3s ease-in;
+	}
+
+	.contact-content-con .left-contact .contact-info .contact-item {
+		opacity: 1;
+		animation: loader1 1.3s ease-in;
 	}
 }
