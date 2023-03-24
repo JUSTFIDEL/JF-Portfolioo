@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="refresh" content="3; url = http://localhost:3000/" />
+		<title>Failure-Page</title>
+
+		<!-- Custom styles for this template -->
+		<link href="css/styles.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="jumbotron1">
+			<div class="jumb-con">
+				<h1 class="display-4">Uh Oh!</h1>
+				<p class="lead01">Your Message was unsuccesfully.</p>
+				<p class="lead11">
+					There was a problem sending your message, please try again or
+					contact the developer.
+				</p>
+				<hr class="my-4" />
+
+				<form action="/failure" method="post">
+					<button class="btn" type="submit" name="button">
+						Try Again
+					</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
