@@ -1,51 +1,84 @@
-const sections = document.querySelectorAll('.section')
-const sectBtns = document.querySelectorAll('.controls')
-const sectBtn = document.querySelectorAll('.control')
-const allSections = document.querySelector('.main-content')
+require('dotenv').config()
+const express = require('express')
+const bodyParser = require('body-parser')
+const https = require('https')
+const app = express()
+// const mailchimp = require('@mailchimp/mailchimp_marketing')
 
+app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ extended: true }))
 
+app.get('/', (req, res) => {
+	res.sendFile(__dirname + '/index.html')
+})
 
-function pageTransition () {
-    // Button click active class
-    for(let i = 0; i < sectBtn.length; i++) {
-        sectBtn[i].addEventListener('click', function(){
-            let currentBtn = document.querySelectorAll('.active-btn');
-            currentBtn[0].className = currentBtn[0].className.replace('active-btn', '')
-            this.className += ' active-btn';
-        })
-    }
+app.get('/success', (req, res) => {
+	res.sendFile(__dirname + '/success.html')
+})
 
-    //Section Active
-    allSections.addEventListener('click', (e) => {
-        const id = e.target.dataset.id;
-        if(id){
-            //remove selected from button
-            sectBtns.forEach((btn) => {
-                btn.classList.remove('active')
-            })
-            e.target.classList.add('active')
+app.get('/failure', (req, res) => {
+	res.sendFile(__dirname + '/failure.html')
+})
 
-            //hide other sections
-            sections.forEach((section) => {
-                section.classList.remove('active')
-            })
+app.post('/', (req, res) => {
+	const name = req.body.name
+	const email = req.body.email
+	const subject = req.body.subject
+	const message = req.body.message
 
-            const element = document.getElementById(id);
-            element.classList.add('active')
-        }
-    })
+	// const data = {
+	// 	members: [
+	// 		{
+	// 			email_address: email,
+	// 			status: 'subscribed',
+	// 			merge_fields: {
+	// 				FNAME: name,
+	// 			},
+	// 		},
+	// 	],
+	// }
 
-    //Toggle theme
+	// const jsonData = JSON.stringify(data)
 
-    const themeBtn = document.querySelector('.theme-btn')
-    themeBtn.addEventListener('click', () => {
-        let element = document.body;
-        element.classList.toggle('light-mode')
-    })
+	// const url = 'https://us17.api.mailchimp.com/3.0/lists/' + process.env.SERVER
 
+	// const options = {
+	// 	method: 'POST',
+	// 	auth: 'justfidel:' + process.env.API_KEY,
+	// }
 
-}
+	// const request = https.request(url, options, response => {
+	// 	if (response.statusCode === 200) {
+	// 		res.sendFile(__dirname + '/success.html')
+	// 	} else {
+	// 		res.sendFile(__dirname + '/failure.html')
+	// 	}
 
-pageTransition()
+	// 	response.on('data', data => {
+	// 		console.log(JSON.parse(data))
+	// 	})
+	// })
 
+	// request.write(jsonData)
+	// request.end()
 
+	if (res.statusCode === 200) {
+		res.sendFile(__dirname + '/success.html')
+		// res.redirect('/')
+	} else {
+		res.sendFile(__dirname + '/failure.html')
+		res.redirect('/')
+	}
+})
+
+app.post('/success', (req, res) => {
+	res.redirect('/')
+})
+
+app.post('/failure', (req, res) => {
+	res.redirect('/')
+})
+
+app.listen(process.env.POST || 3000, () => {
+	console.log('Server started on port 3000')
+})
